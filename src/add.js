@@ -1,5 +1,5 @@
 chrome.downloads.onDeterminingFilename.addListener(add);
-var size = localStorage["size"] * 1024 * 1024;
+var size = localStorage["size"]  * 1024;
 var path = localStorage["path"];
 function add(down) {
 	console.debug(down);
