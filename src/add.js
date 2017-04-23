@@ -23,11 +23,12 @@ function add(down) {
         if (ifpostback == "base64_error") {
             options.body = '添加任务至 aria2 出错';
             var notification = new Notification("失败！", options);
+            setTimeout(notification.close.bind(n), 5000);
         } else {
-            chrome.downloads.cancel(down.id,
-            function(s) {});
+            chrome.downloads.cancel(down.id, function(s) {});
             options.body = '任务已经添加至 aria2';
             var notification = new Notification("成功！", options);
+            setTimeout(notification.close.bind(n), 2000);
         }
     }
     //alert(down.fileSize);
